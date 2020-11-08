@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+ </head>
+
+  <body>
+    <input type='file' />
+    <br><img id="image" src="#" alt="your image">
+    <!-- <img id='image' src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS7nhjcHOop26iNIuLfdFGhxQAVDJM_TCdh0w&usqp=CAU' crossorigin='anonymous'/> -->
+    <canvas id="canvas" width="250" height="250"></canvas>
+    <a id="download" download="noBackground.png">
+        <button type="button" onClick="download()">Download</button>
+        </a>
+
+    <!-- Load TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.2"></script>
+    <!-- Load BodyPix -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix@2.0"></script>
+    <script src="remove.js"></script>
+  </body>
+  <!-- Place your code in the script tag below. You can also use an external .js file -->
+</html>

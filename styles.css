@@ -15,8 +15,15 @@
     transition: all .5s ease;
 }
 html {scroll-behavior: smooth; background-color: var(--green); font-family: 'Nunito', sans-serif;}
-.container {max-width: 900px; margin: 40px auto; text-align: center;}
-h1 {color: var(--brown); max-width: 400px; margin: 0 auto 10px; line-height: 1; padding: 0 20px;}
+body {
+    display: grid;
+    grid-template-rows: 1fr 50px;
+    justify-content: stretch;
+    align-items: stretch;
+    height: 100vh;
+}
+.container {max-width: 900px; margin: 40px auto 20px; text-align: center;}
+h1 {color: var(--brown); max-width: 400px; margin: 0 auto 10px; line-height: 1; padding: 0 20px; font-size: 25px;}
 #preview {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -44,7 +51,7 @@ h1 {color: var(--brown); max-width: 400px; margin: 0 auto 10px; line-height: 1; 
 }
 #imgs div {
     max-width: 100%;
-    max-height: 10vh;
+    max-height: 1vh;
     overflow: scroll;
 }
 #loading {text-align: center;}
@@ -63,7 +70,7 @@ h1 {color: var(--brown); max-width: 400px; margin: 0 auto 10px; line-height: 1; 
     font-weight: bold;
     line-height: 1.2;
 }
-#download {margin: 30px auto 0; padding:0; }
+#download {margin: 20px auto 0; padding:0; }
 #download button:hover, #download button:focus, #download:hover, #download:focus {
     background: var(--brown-light); color: var(--black);}
 input[type="file"] {
@@ -72,6 +79,9 @@ input[type="file"] {
     font-family: 'Nunito', sans-serif;
 }
 #preview.inactive, #download.inactive, .inactive {display: none;}
+footer {text-align:center; color:var(--brown)}
+footer a {color:var(--brown-light)}
+#icoref {font-size:11px;}
 @keyframes loading {
     0% {transform: rotateZ(0deg);}
     100% {transform: rotateZ(360deg);}

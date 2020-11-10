@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+:root {
+    --black: #23231a;
+    --brown: #322f20;
+    --brown-light: #6a5837;
+    --green: #988f2a;
+    --orange: #fe5f00; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    transition: all .5s ease;
+}
+html {scroll-behavior: smooth; background-color: var(--green); font-family: 'Nunito', sans-serif;}
+.container {max-width: 900px; margin: 40px auto; text-align: center;}
+h1 {color: var(--brown); max-width: 400px; margin: 0 auto 10px; line-height: 1; padding: 0 20px;}
+#preview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50vh;
+    text-align: center;
+}
+@media (max-width: 400px) {
+    #preview {grid-template-columns: 1fr; grid-template-rows: 40vh 40vh; grid-gap:10px;}    
+}
+#preview > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#preview img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#imgs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    opacity: 0;
+}
+#imgs div {
+    max-width: 100%;
+    max-height: 10vh;
+    overflow: scroll;
+}
+#loading {text-align: center;}
+#loading_icon {animation: loading 3s infinite;}
+#download, #download button {
+    display: block;
+    width: 300px;
+    background: var(--orange);
+    border: 0;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    color: var(--brown);
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    line-height: 1.2;
+}
+#download {margin: 30px auto 0; padding:0; }
+#download button:hover, #download button:focus, #download:hover, #download:focus {
+    background: var(--brown-light); color: var(--black);}
+input[type="file"] {
+    background: var(--brown-light);
+    padding: 10px;
+    font-family: 'Nunito', sans-serif;
+}
+#preview.inactive, #download.inactive, .inactive {display: none;}
+@keyframes loading {
+    0% {transform: rotateZ(0deg);}
+    100% {transform: rotateZ(360deg);}
+}

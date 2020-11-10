@@ -1,46 +1,66 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">    
+    
+    <link rel="icon" href="fav.ico" />
+    <link rel="apple-touch-icon" href="logo.png" />
+    <meta name="theme-color" content="#988f2a" />
+
     <title>Remove Background</title>
+    <meta name="description" content="Remove the background of your photos"/>
+    <meta property="og:url" content="https://removebg.caiocv.com/" />
+    <meta property="og:image" content="https://removebg.caiocv.com/favicon.png" />
+    <meta property="og:title" content="Remove Background" key="ogtitle" />
+    <meta propery="og:site_name" content="Remove Background" key="ogsitename" />
+    <meta property="og:description" content="Remove the background of your photos" key="ogdesc" />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://removebg.caiocv.com/index.html" />
+    
     <link rel="stylesheet" href="styles.css">
  </head>
 
   <body>
-    <div class="container">
-      <h1>Load your image below to remove the background</h1>
-      <input type='file' />
-    </div>
-    <div id="preview" class="inactive">
-      <div>
-        <img id="pre" >
+    <main>
+      <div class="container">
+        <h1>Load your image below to remove the background</h1>
+        <input type='file' />
       </div>
-      <div>
-        <div id="loading">
-          <svg version="1.1" id="loading_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="50px" height="50px" viewBox="0 0 399.389 399.389" style="enable-background:new 0 0 399.389 399.389;"
-	 xml:space="preserve"><g><path d="M340.896,58.49C303.18,20.773,253.031,0.001,199.693,0.001c-53.34,0-103.487,20.771-141.204,58.489
-		C20.772,96.208,0,146.355,0,199.694c0,53.34,20.772,103.489,58.49,141.206c37.717,37.717,87.864,58.488,141.204,58.488
-		c53.339,0,103.486-20.771,141.205-58.488c37.717-37.717,58.49-87.865,58.49-141.206C399.387,146.355,378.613,96.208,340.896,58.49z
-		 M321.93,199.694c0,67.401-54.836,122.236-122.237,122.236S77.457,267.096,77.457,199.694S132.292,77.458,199.693,77.458
-		S321.93,132.293,321.93,199.694z M328.061,71.327c3.352,3.353,6.553,6.817,9.607,10.379l-29.262,29.262
-		c-25.766-31.512-64.928-51.664-108.713-51.664c-4.593,0-9.134,0.229-13.615,0.662V18.655c4.508-0.332,9.049-0.5,13.615-0.5
-    C248.184,18.155,293.771,37.038,328.061,71.327z"/></g></svg>          
+      <div id="preview" class="inactive">
+        <div>
+          <img id="pre" >
         </div>
-        <img id="pos"  class="inactive">
-      </div>     
-    </div>
-    <a id="download" download="noBackground.png" class="inactive">
-      <button type="button" onClick="download()">Download image without background</button>
-    </a>
-    <div id="imgs">
-      <div>
-        <img id="image"  alt="uploaded image">
+        <div>
+          <div id="loading">
+            <svg version="1.1" id="loading_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    width="50px" height="50px" viewBox="0 0 399.389 399.389" style="enable-background:new 0 0 399.389 399.389;"
+    xml:space="preserve"><g><path d="M340.896,58.49C303.18,20.773,253.031,0.001,199.693,0.001c-53.34,0-103.487,20.771-141.204,58.489
+      C20.772,96.208,0,146.355,0,199.694c0,53.34,20.772,103.489,58.49,141.206c37.717,37.717,87.864,58.488,141.204,58.488
+      c53.339,0,103.486-20.771,141.205-58.488c37.717-37.717,58.49-87.865,58.49-141.206C399.387,146.355,378.613,96.208,340.896,58.49z
+      M321.93,199.694c0,67.401-54.836,122.236-122.237,122.236S77.457,267.096,77.457,199.694S132.292,77.458,199.693,77.458
+      S321.93,132.293,321.93,199.694z M328.061,71.327c3.352,3.353,6.553,6.817,9.607,10.379l-29.262,29.262
+      c-25.766-31.512-64.928-51.664-108.713-51.664c-4.593,0-9.134,0.229-13.615,0.662V18.655c4.508-0.332,9.049-0.5,13.615-0.5
+      C248.184,18.155,293.771,37.038,328.061,71.327z"/></g></svg>          
+          </div>
+          <img id="pos"  class="inactive">
+        </div>     
       </div>
-      <div>
-        <canvas id="canvas" width="250" height="250"></canvas>
+      <a id="download" download="noBackground.png" class="inactive">
+        <button type="button" onClick="download()">Download image without background</button>
+      </a>
+      <div id="imgs">
+        <div>
+          <img id="image"  alt="uploaded image">
+        </div>
+        <div>
+          <canvas id="canvas" width="250" height="250"></canvas>
+        </div>
       </div>
-    </div>
+    </main>
+    <footer>
+      <div id="copy">Made by <a href="https://caiocv.com/" title="Caio Cesar">Caio</a>. Code at <a href="https://github.com/caiocvsilva/removeBG" title="Github">github</a></div>
+      <div id="icoref">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    </footer>
     
 
     <!-- Load TensorFlow.js -->

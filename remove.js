@@ -1,4 +1,6 @@
 const img = document.getElementById('image');
+const pre = document.getElementById('pre');
+const pos = document.getElementById('pos');
 
 
 function download() {
@@ -13,8 +15,13 @@ function download() {
 window.addEventListener('load', function() {
     document.querySelector('input[type="file"]').addEventListener('change', function() {
         if (this.files && this.files[0]) {
-            var img = document.querySelector('img');  // $('img')[0]
+            var img = document.querySelector('#image');  // $('img')[0]
             img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+            pre.src = URL.createObjectURL(this.files[0]);
+            document.querySelector('#preview').classList.remove('inactive');
+            document.querySelector('#loading').classList.remove('inactive');
+            document.querySelector('#pos').classList.add('inactive');
+            document.querySelector('#download').classList.add('inactive');
             img.onload = imageIsLoaded(img);
 
         }
@@ -98,6 +105,11 @@ async function loadAndPredict() {
   console.log('newImage: ',imgData);
 
   context.putImageData(imgData, 0, 0);
+  document.querySelector('#loading').classList.add('inactive');
+  document.querySelector('#pos').classList.remove('inactive');
+  document.querySelector('#download').classList.remove('inactive');
+  pos.src = canvas.toDataURL();
+
 
 }
 
